@@ -27,7 +27,8 @@
       <div>
         <img style="border-radius:50%; border:2px solid cornflowerblue;" src="logo.jpg" alt="logo space" width="45px" height="45px">
       </div>
-    <div style="display:flex; align-items:center;padding-left:300px;">
+    <div style="display:flex; align-items:center;padding-left:300px;
+     text-transform: capitalize;font-family: 'Times New Roman', Times, serif;">
     <a class="tab active" href="#top">home</a>
     <a class="tab" href="#about">about</a>
     <a class="tab" href="#skills">skills</a>
@@ -41,8 +42,8 @@
   <section class="hero" >
     <div style="display:flex;">
       <div>
-      Hello I am
-    <h1 class="name" ><span style="color: #cf5001;">KRISHNA </span> <span style="color: aqua;"> MURARI</span> <span style="color: brown;"> MISHRA</span></h1>
+     <span id="hello"> Hello</span> <span id="i">I</span> <span id="am">am</span>
+    <h1 class="name" ><span style="color: #cf5001;" id="krishna">KRISHNA </span> <span style="color: aqua;" id="murari"> MURARI</span> <span style="color: brown;" id="mishra"> MISHRA</span></h1>
     <div class="role" style="font-family: 'Times New Roman', Times, serif;">Front End Developer</div>
     <p class="hero-desc" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
       I build things for the web — from pixel-level interface work in HTML, CSS
@@ -232,8 +233,8 @@
         <a class="contact-row" href="https://github.com/km6307" target="_blank" rel="noopener noreferrer">
           <span class="key">github</span><span class="val">github.com/km6307</span>
         </a>
-        <a class="contact-row" href="#" onclick="return false;">
-          <span class="key">linkedin</span><span class="val">linkedin.com</span>
+        <a class="contact-row" href="https://www.linkedin.com/in/krishna-murari-mishra-38b330381/" target="_blank">
+          <span class="key">linkedin</span><span class="val">https://www.linkedin.com/in/krishna-murari-mishra-38b330381/</span>
         </a>
       </div>
     </div>
@@ -251,6 +252,44 @@
   // Highlight active tab based on scroll position
   const sections = ['top','about','skills','projects','certificates','contact'].map(id => document.getElementById(id));
   const tabs = Array.from(document.querySelectorAll('.tab'));
+  const helloText = document.getElementById('hello');
+  const iText = document.getElementById('i');
+  const amText = document.getElementById('am');
+  const krishnaText = document.getElementById('krishna');
+  const murariText = document.getElementById('murari');
+  const mishraText = document.getElementById('mishra');
+
+  // Show greeting words with delays: Hello after 2s, I after 3s, am after 4s
+  [helloText, iText, amText, krishnaText, murariText, mishraText].forEach(e => {
+    if (e) {
+      e.style.opacity = '0';
+      e.style.transition = 'opacity 0.5s ease';
+    }
+  });
+
+  setTimeout(() => {
+    if (helloText) helloText.style.opacity = '1';
+  }, 200);
+
+  setTimeout(() => {
+    if (iText) iText.style.opacity = '1';
+  }, 500);
+
+  setTimeout(() => {
+    if (amText) amText.style.opacity = '1';
+  }, 1000);
+
+  setTimeout(() => {
+    if (krishnaText) krishnaText.style.opacity = '1';
+  }, 1500);
+
+  setTimeout(() => {
+    if (murariText) murariText.style.opacity = '1';
+  }, 2000);
+
+  setTimeout(() => {
+    if (mishraText) mishraText.style.opacity = '1';
+  }, 3000);
 
   function setActiveTab(){
     let current = sections[0];
