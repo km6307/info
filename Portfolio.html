@@ -40,15 +40,15 @@
   .wrap {
     width: min(1180px, calc(100% - 32px));
     margin: 0 auto;
-  }
+    border-radius: 50px;
 
-  .tabbar {
+      background: #0b1220;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
     position: sticky;
     top: 0;
     z-index: 30;
-    backdrop-filter: blur(12px);
-    background: rgba(15, 23, 42, 0.8);
-    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+    background: #0d0e11;
+    border-bottom: 1px solid #2a2d33;
   }
 
   .tabbar-inner {
@@ -57,44 +57,26 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
-    min-height: 82px;
+    gap: 24px;
+    min-height: 68px;
   }
 
-  .tabbar-inner > div:nth-child(2) {
+  .tabbar-inner nav {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 8px 22px;
-    text-transform: capitalize;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 0.97rem;
+    gap: 18px;
   }
 
   .tab {
-    position: relative;
-    color: #d8e7ff;
-    opacity: 0.8;
-    padding: 10px 0;
-    transition: opacity 0.25s ease, color 0.25s ease;
+    color: #eaecee;
+    font-size: 0.95rem;
+    text-transform: capitalize;
+    transition: color 0.2s ease;
   }
 
   .tab:hover,
   .tab.active {
-    opacity: 1;
     color: #7dd3fc;
-  }
-
-  .tab.active::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -6px;
-    height: 2px;
-    background: linear-gradient(90deg, #7dd3fc, #f97316);
-    border-radius: 999px;
   }
 
   .hero {
@@ -447,11 +429,6 @@
       grid-template-columns: 1fr;
     }
 
-    .tabbar-inner {
-      flex-direction: column;
-      justify-content: center;
-      padding: 18px 0;
-    }
   }
 
   @media (max-width: 560px) {
@@ -463,8 +440,16 @@
       width: min(100% - 22px, 1180px);
     }
 
-    .tabbar-inner > div:nth-child(2) {
-      gap: 8px 14px;
+    .tabbar-inner {
+      flex-wrap: wrap;
+      padding: 12px 0;
+    }
+
+    .tabbar-inner nav {
+      gap: 10px;
+    }
+
+    .tab {
       font-size: 0.88rem;
     }
 
@@ -493,17 +478,15 @@
 
 <div class="tabbar">
   <div class="tabbar-inner">
-      <div>
-        <img style="border-radius:50%; border:2px solid cornflowerblue;" src="logo.jpg" alt="logo space" width="70px" height="70px">
-      </div>
-    <div>
+    <img style="border-radius:50%; border:2px solid cornflowerblue;" src="logo.jpg" alt="logo" width="48" height="48">
+    <nav aria-label="Main navigation">
     <a class="tab active" href="#top">home</a>
     <a class="tab" href="#about">about</a>
     <a class="tab" href="#skills">skills</a>
     <a class="tab" href="#projects">projects</a>
     <a class="tab" href="#certificates">certificate</a>
     <a class="tab" href="#contact">contact</a>
-    </div>
+    </nav>
   </div>
 </div>
 <div class="wrap" id="top">
@@ -623,7 +606,7 @@
         <img src="python.jpg" alt="python certificate" width="200" height="200">
         <div class="card-body">
           <h5 class="card-title">PYTHON</h5>
-          <p class="card-text">This is my PYTHON certificate.</p>
+          <p class="card-text">This is my PYTHON(Django) certificate.</p>
           <a href="python.jpg" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Certificate</a>
         </div>
       </div>
